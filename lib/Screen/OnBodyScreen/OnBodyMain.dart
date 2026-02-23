@@ -2,6 +2,7 @@ import 'package:busbookingapp/Screen/OnBodyScreen/OnBodyScreen1.dart';
 import 'package:busbookingapp/Screen/OnBodyScreen/OnBodyScreen2.dart';
 import 'package:busbookingapp/Screen/OnBodyScreen/OnBodyScreen3.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class OnBodyMain extends StatefulWidget {
   const OnBodyMain({super.key});
@@ -55,6 +56,7 @@ class _OnBodyMainState extends State<OnBodyMain> {
               }),
             ),
           ),
+
         ],
       ),
     );

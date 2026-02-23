@@ -1,10 +1,16 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:busbookingapp/Screen/Login/auth/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class onbodyscreen3 extends StatelessWidget {
+class onbodyscreen3 extends StatefulWidget {
   const onbodyscreen3({super.key});
 
+  @override
+  State<onbodyscreen3> createState() => _onbodyscreen3State();
+}
+
+class _onbodyscreen3State extends State<onbodyscreen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -73,36 +79,47 @@ class onbodyscreen3 extends StatelessWidget {
             right: 40,
             child: SizedBox(
               height: 55,
-              child: ElevatedButton(
-                onPressed: () {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => LoginScreen()),
-                  );
-                },
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.transparent,
-                  shadowColor: Colors.transparent,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  padding: EdgeInsets.zero,
-                ),
-                child: Ink(
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Color(0xFFFFA726), Color(0xFFFF7043)],
+              child: MouseRegion(
+                // onEnter: (_) {
+                //   print("Run Method");
+                // },
+                // onExit: (_) {},
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.transparent,
+                    shadowColor: Colors.transparent,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30),
                     ),
-                    borderRadius: BorderRadius.circular(30),
+                    padding: EdgeInsets.zero,
                   ),
-                  child: Container(
-                    alignment: Alignment.center,
-                    child: Text(
-                      "Get Started",
-                      style: GoogleFonts.poppins(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.white,
+                  child: Ink(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [Color(0xFFFFA726), Color(0xFFFF7043)],
+                      ),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: Container(
+                      alignment: Alignment.center,
+                      child: AnimatedTextKit(
+                        repeatForever: true,
+                        animatedTexts: [
+                          BounceAnimatedText(
+                            "Get Started",
+                            textStyle: GoogleFonts.poppins(
+                              fontSize: 18,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
