@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:busbookingapp/Screen/OnBodyScreen/OnBodyScreen1.dart';
+import 'package:busbookingapp/Screen/OnBodyScreen/OnBodyMain.dart';
 import 'package:busbookingapp/utils/LoadingText.dart';
 import 'package:flutter/material.dart';
 
@@ -16,10 +16,10 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    Timer(Duration(seconds: 3), () {
+    Timer(Duration(seconds: 8), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => onbodyscreen()),
+        MaterialPageRoute(builder: (context) => OnBodyMain()),
       );
     });
   }
@@ -67,17 +67,17 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Positioned(
             bottom: -10,
-            left: -80,
-            right: -100,
-            top: 360,
+            left: -120,
+            right: -170,
+            top: 390,
             child: Image.asset(
               "assets/image/splashlogo.png",
-              height: -10, // increase height
+              height: -10,
               fit: BoxFit.contain,
             ),
           ),
 
-          Align(alignment: const Alignment(0, 0.75), child: LoadingText()),
+          Align(alignment: Alignment(0, 0.75), child: LoadingText()),
         ],
       ),
     );
