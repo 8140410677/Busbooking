@@ -23,7 +23,7 @@ class _onBodyScreen2State extends State<onBodyScreen2> {
           ),
 
           Positioned(
-            top: 110,
+            top: 120,
             left: 0,
             right: 0,
             child: Column(

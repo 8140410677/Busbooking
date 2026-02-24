@@ -11,12 +11,12 @@ class LoadingText extends StatefulWidget {
 
 class _LoadingTextState extends State<LoadingText> {
   int dotCount = 0;
-  Timer? timer;
+  Timer? dotCounter;
 
   @override
   void initState() {
     super.initState();
-    timer = Timer.periodic(Duration(milliseconds: 500), (_) {
+    dotCounter = Timer.periodic(Duration(milliseconds: 500), (_) {
       setState(() {
         dotCount = (dotCount + 1) % 4;
       });
@@ -25,7 +25,7 @@ class _LoadingTextState extends State<LoadingText> {
 
   @override
   void dispose() {
-    timer?.cancel();
+    dotCounter?.cancel();
     super.dispose();
   }
 

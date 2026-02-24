@@ -28,9 +28,9 @@ class _onbodyscreen3State extends State<onbodyscreen3> {
           ),
 
           Positioned(
-            top: 100,
-            left: 50,
-            right: 40,
+            top: 120,
+            left: 0,
+            right: 0,
             child: Column(
               children: [
                 Text(
@@ -53,7 +53,7 @@ class _onbodyscreen3State extends State<onbodyscreen3> {
                 SizedBox(height: 10),
 
                 Text(
-                  "Confirm Your Booking Quickly and Securely",
+                  "Confirm Your Booking Quickly \n and Securely",
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     fontSize: 16,
@@ -84,42 +84,51 @@ class _onbodyscreen3State extends State<onbodyscreen3> {
                 //   print("Run Method");
                 // },
                 // onExit: (_) {},
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.transparent,
-                    shadowColor: Colors.transparent,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    padding: EdgeInsets.zero,
-                  ),
-                  child: Ink(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFFFFA726), Color(0xFFFF7043)],
+                child: PhysicalModel(
+                  elevation: 50,
+                  color: Colors.orange,
+                  shadowColor: Colors.black.withOpacity(0.5),
+                  borderRadius: BorderRadius.circular(30),
+                  clipBehavior: Clip.antiAlias,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      print("button Click");
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.transparent,
+                      shadowColor: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
                       ),
-                      borderRadius: BorderRadius.circular(30),
+                      elevation: 0,
+                      padding: EdgeInsets.zero,
                     ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      child: AnimatedTextKit(
-                        repeatForever: true,
-                        animatedTexts: [
-                          BounceAnimatedText(
-                            "Get Started",
-                            textStyle: GoogleFonts.poppins(
-                              fontSize: 18,
-                              fontWeight: FontWeight.w600,
-                              color: Colors.white,
+                    child: Ink(
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Color(0xFFFFA726), Color(0xFFFF7043)],
+                        ),
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: Container(
+                        alignment: Alignment.center,
+                        child: AnimatedTextKit(
+                          repeatForever: true,
+                          animatedTexts: [
+                            BounceAnimatedText(
+                              "Get Started",
+                              textStyle: GoogleFonts.poppins(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white,
+                              ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                   ),

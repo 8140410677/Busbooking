@@ -49,7 +49,6 @@ class _OnBodyMainState extends State<OnBodyMain> {
                     color: currentIndex == index
                         ? const Color(0xFFFF7043)
                         : Colors.grey.shade300,
-
                     borderRadius: BorderRadius.circular(10),
                   ),
                 );

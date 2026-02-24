@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:busbookingapp/Screen/Login/auth/LoginScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -25,7 +27,6 @@ class Onbodyscreen1 extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 40),
               child: Column(
                 children: [
-
                   Text(
                     "Find Your Bus",
                     textAlign: TextAlign.center,
@@ -36,7 +37,7 @@ class Onbodyscreen1 extends StatelessWidget {
                     ),
                   ),
 
-                  SizedBox(height: 10),
+                  SizedBox(height: 8),
 
                   Text(
                     "Search buses between cities easily",
@@ -59,9 +60,12 @@ class Onbodyscreen1 extends StatelessWidget {
             left: -250,
             right: -250,
             top: 400,
-            child: Image.asset(
-              "assets/image/splashlogo.png",
-              fit: BoxFit.contain,
+            child: ImageFiltered(
+              imageFilter: ImageFilter.blur(sigmaX: 1),
+              child: Image.asset(
+                "assets/image/splashlogo.png",
+                fit: BoxFit.contain,
+              ),
             ),
           ),
           Positioned(
